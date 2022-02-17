@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Income Count</title>
+</head>
+
+<body>
+    <h1>Income Count</h1>
+    <div class="container">
+
+        <div class="img-section">
+            <img src="image/money.jpg" alt="">
+        </div>
+        <div class="calculate-section">
+            <div class="income">
+                <h2>Income</h2>
+                <p>Income: <input id="income" type="text"></p>
+            </div>
+            <div class="expenses">
+                <h2>Expenses</h2>
+                <p>Food: <input id="food" type="text"></p>
+                <p>Rent: <input id="rent" type="text"></p>
+                <p>Clothes: <input id="cloth" type="text"></p>
+                <button id="calculate-expense">Calculate</button>
+            </div>
+            <div class="calculation">
+                <p id="expense-error" style="display: none;">Total expense is more than income</p>
+                <p>Total Expenses : <span id="total-expense">0</span></p>
+                <p>Balance : <span id="remaining-balance">0</span></p>
+                <p>Save: <input type="text" name="" id="save-input"> <span>%</span></p>
+                <button id="save">Save</button>
+                <p id="saving-error" style="display: none;">Saving amount is more than remaing balance</p>
+                <p>Saving Amount : <span id="saving-amount">0</span></p>
+                <p>Remainig amount : <span id="last-balance">0</span></p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
