@@ -1,13 +1,16 @@
 function getValue(element,isInput){
     if(isInput){
         let elementValue=parseFloat(document.getElementById(element).value);
+        
         if(elementValue>=0){
         return elementValue;
         }
-        else if(elementValue<0){
+        else if(elementValue<0 || elementValue==" "){
+            const typeError=getValue("type-error",false);
+            typeError.style.display="block";
+            typeError.style.color="red";
             return 0;
         }
-        
     }else{
         const elementValue=document.getElementById(element);
         return elementValue;
