@@ -1,9 +1,10 @@
 function getValue(element,isInput){
-    // checking is it is input type or not
+    // checking if it is input type or not
     if(isInput){
         let elementValue=parseFloat(document.getElementById(element).value);
         // recursion
         const typeError=getValue("type-error",false);
+        const zeroError=getValue("zero-error",false);
 // if the value is greater than 0
         if(elementValue>0){
         return elementValue;
@@ -11,6 +12,11 @@ function getValue(element,isInput){
         else if(elementValue<=0){
             typeError.style.display="block";
             typeError.style.color="red";
+            return 0;
+        }
+        else if(elementValue!=Number){
+            zeroError.style.display="block";
+            zeroError.style.color="red";
             return 0;
         }
     }else{
