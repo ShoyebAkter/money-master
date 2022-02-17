@@ -2,12 +2,13 @@ function getValue(element,isInput){
     // checking is it is input type or not
     if(isInput){
         let elementValue=parseFloat(document.getElementById(element).value);
-        
-        if(elementValue>=0){
+        // recursion
+        const typeError=getValue("type-error",false);
+// if the value is greater than 0
+        if(elementValue>0){
         return elementValue;
         }
-        else if(elementValue<0 || elementValue==" "){
-            const typeError=getValue("type-error",false);
+        else if(elementValue<=0){
             typeError.style.display="block";
             typeError.style.color="red";
             return 0;
@@ -27,7 +28,7 @@ document.getElementById("calculate-expense").addEventListener("click",function()
     const totalExpense=getValue("total-expense",false);
     const expenseError=getValue("expense-error",false);
     let total=food+rent+cloth;
-    if(total<income){
+    if(total<=income){
     totalExpense.innerText=total;
     const remainingBalance=income-total;
     remainingBalanceText.innerText=remainingBalance;
