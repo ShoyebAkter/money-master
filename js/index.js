@@ -33,7 +33,6 @@ document.getElementById("calculate-expense").addEventListener("click",function()
         totalExpense.innerText=total;
         remainingBalanceText.innerText=0;
     }
-    
 })
 
 document.getElementById("save").addEventListener("click",function(){
@@ -44,13 +43,13 @@ document.getElementById("save").addEventListener("click",function(){
     const income=getValue("income",true);
     const savingError=getValue("saving-error",false);
     const saving=income*(saveInputText/100);
-    if(saving<remainingBalanceText){
-    
     savingAmount.innerText=saving;
     let lastAmount=remainingBalanceText.innerText-saving;
     lastAmountText.innerText=lastAmount;
-    }else{
+    savingError.style.display="none";
+    if(saving>remainingBalanceText.innerText){
         savingError.style.display="block";
-    savingError.style.color="red";
+        savingError.style.color="red";
+        lastAmountText.innerText=0;
     }
 })
