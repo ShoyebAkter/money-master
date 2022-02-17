@@ -1,4 +1,5 @@
 function getValue(element,isInput){
+    // checking is it is input type or not
     if(isInput){
         let elementValue=parseFloat(document.getElementById(element).value);
         
@@ -16,6 +17,7 @@ function getValue(element,isInput){
         return elementValue;
     }
 }
+//event handler for calculate button
 document.getElementById("calculate-expense").addEventListener("click",function(){
     const income=getValue("income",true);
     const food=getValue("food",true);
@@ -37,7 +39,7 @@ document.getElementById("calculate-expense").addEventListener("click",function()
         remainingBalanceText.innerText=0;
     }
 })
-
+//event handler for saving button
 document.getElementById("save").addEventListener("click",function(){
     const savingAmount=getValue("saving-amount",false);
     const lastAmountText=getValue("last-balance",false);

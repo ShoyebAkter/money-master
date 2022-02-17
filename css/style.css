@@ -1,6 +1,7 @@
 * {
   margin: 0;
 }
+/* main section css */
 .container {
   display: flex;
   justify-content: center;
@@ -52,6 +53,7 @@ input {
 .calculation {
   padding: 10px;
 }
+/* all button css */
 button {
   padding: 5px 15px;
   margin: 5px;
@@ -63,6 +65,7 @@ button {
   font-size: 15px;
   font-weight: 600;
 }
+/* responsive css */
 @media screen and (max-width: 600px) {
   .container {
     display: block;
